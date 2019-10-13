@@ -15,11 +15,17 @@ I use this to cool a the compartment some hardware is running in since ventilati
 
 The temperature sensor is connected to digital pin 2 (`ONE_WIRE_BUS`). Don't forget to add a resistor. The led is connected to digital pin 6 (`LED`). The PWM signal is generate on digital pin 3 (`pwmPin`) and the rpm signal of the fan is read on digital pin 4 (`rpmPin`).
 
+The cabling has been done as in tutorials online. For that, please see the section "Acknowledgements".
+
 ## Software
 
-The Arduino sketch can be found in `src/`. The code is a bit messy at the moment, but should be 
+The Arduino sketch can be found in `src/`. The code is a bit messy at the moment, but should have sufficient comments.  
 
 The fan will be turned as soon as a certain temperature (`temp_start`) is reached. It will be turned off again as soon as the fan has run a certain time period (`MIN_TIME_RUNNING`) and the temperature is below a threshold (`temp_stop`). This should keep the fan from turning on and off all the time. While the fan is running a led is turned on. 
+
+### Bugs
+
+- After turning the device on the fan spins up for `MIN_TIME_RUNNING` seconds. That was not intended. Maybe I need to add some `delay` after boot up so everything is initialized properly and that the temperature sensor gives sensible temperature readings. 
 
 ## Dependencies 
 
