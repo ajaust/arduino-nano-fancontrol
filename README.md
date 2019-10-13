@@ -1,15 +1,17 @@
 # arduino-nano-fancontrol
 
-A simple PWM fan control based on an Ardiuno nano.
+A simple PWM fan control based on an Ardiuno nano. 
+
+I use this to cool a the compartment some hardware is running in since ventilation in this compartment is very bad. The fan shall be turned on depending on the temperature. 
 
 ## Hardware used
 
-- Arduino Nano
+- `Arduino Nano`
 - A fan than can be controlled via PWM. 
     - I used a `Noctua NF-F12 5V PWM`. I use the included adapter to power the fan and the Arduino Nano. 
-    - **DO NOT** power the fan via the Arduino 5V pin. It will most likely drain way too much energy!
+    - **DO NOT** power the fan via the Arduino 5V pin. It will most likely drain way too much energy and kill the Arduino!
 - Bread board, some cables and a LED.
-- A DS18B20 temperature sensor. You can use other sensors as well, but then you have to change parts of the code. 
+- A `DS18B20` temperature sensor. You can use other sensors as well, but then you have to change parts of the code. 
 
 The temperature sensor is connected to digital pin 2 (`ONE_WIRE_BUS`). Don't forget to add a resistor. The led is connected to digital pin 6 (`LED`). The PWM signal is generate on digital pin 3 (`pwmPin`) and the rpm signal of the fan is read on digital pin 4 (`rpmPin`).
 
