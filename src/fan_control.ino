@@ -129,8 +129,8 @@ void loop() {
     time_running += (DELAYTIME/1000);
 
   // Reset to prevent overflow
-  if ( time_running > 4294967195 )
-    time_running = 4294967295;
+  if ( time_running > MIN_TIME_RUNNING )
+    time_running = MIN_TIME_RUNNING+1;
 }
 
 void pwm25kHzBegin() {
